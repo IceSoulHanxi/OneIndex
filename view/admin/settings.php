@@ -64,6 +64,16 @@
 		</div>
 
 		<div class="mdui-textfield">
+            <h4>CDN域名 请直接填写域名(不需要http://)<small>教程见：<a href="https://www.echoteen.com/oneindex-paged-fast.html">OneIndex魔改版下载加速</a></small></h4>
+            <input class="mdui-textfield-input" type="text" name="cdn_address" value="<?php echo $config['cdn_address'];?>"/>
+		</div>
+
+		<div class="mdui-textfield">
+            <h4>CDN匹配规则<small>正则表达式(留空则不使用CDN)</small></h4>
+            <input class="mdui-textfield-input" type="text" name="cdn_regex" value="<?php echo $config['cdn_regex'];?>"/>
+        </div>
+
+		<div class="mdui-textfield">
 		  <h4>去掉地址栏中的<code style="color: #c7254e;background-color: #f7f7f9;font-size:16px;">/?/</code> (需配合伪静态使用!!)</h4>
 		  <label class="mdui-textfield-label"></label>
 		  <label class="mdui-switch">
