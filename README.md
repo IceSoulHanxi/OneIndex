@@ -6,8 +6,10 @@ Onedrive Directory Index
 
 直接列出 OneDrive 目录，文件直链下载。  
 
+使用Cloudflare CDN功能加速下载速度
+
 ## Demo
-[https://xn.tn](https://xn.tn)  
+[https://pan.ixnah.com](https://pan.ixnah.com)  
 
 ## 安装运行
 
@@ -17,6 +19,7 @@ Onedrive Directory Index
 1、PHP空间，PHP 5.6+ 需打开curl支持  
 2、OneDrive 账号 (个人、企业版或教育版/工作或学校帐户)  
 3、OneIndex 程序   
+4、Cloudflare 账号 (可选功能 用于提供缓存)  
 
 ## 配置：
 <img width="658" alt="image" src="https://i.lia.im/git/install.gif">  
@@ -52,6 +55,9 @@ Onedrive Directory Index
 **直接输出网页:**  
 >在 OneDrive 的文件夹中添加`index.html` 文件，程序会直接输出网页而不列目录。  
 >配合 文件展示设置-直接输出 效果更佳。  
+
+## 配置Cloudflare CDN
+咕咕咕!  
 
 ## 命令行功能  
 仅能在PHP CLI模式下运行  

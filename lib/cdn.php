@@ -1,5 +1,5 @@
 <?php
-// 用于进行代理访问
+// 用于进行代理访问 借鉴自OneIndexMod魔改版
 class cdn
 {
     static function proxy($item)
@@ -17,9 +17,11 @@ class cdn
         // var_dump($item);
         if(preg_match($cdnRegex, $item['name'])) {
             if (isset($item['thumb'])) {
-                $item['thumb'] = str_replace(parse_url($item['thumb'], PHP_URL_HOST), $config['cdn_address'], $item['thumb']);
+                $host = parse_url($item['thumb'], PHP_URL_HOST);
+                $item['thumb'] = str_replace($host, $config['cdn_address'], $item['thumb']) . '&odFileSize=' . $item['size'] . '&odHost='.$host;
             } else {
-                $item['downloadUrl'] = str_replace(parse_url($item['downloadUrl'], PHP_URL_HOST), $config['cdn_address'], $item['downloadUrl']);
+                $host = parse_url($item['downloadUrl'], PHP_URL_HOST);
+                $item['downloadUrl'] = str_replace($host, $config['cdn_address'], $item['downloadUrl']) . '&odFileSize=' . $item['size'] . '&odHost='.$host;
             }
         }
         return $item;
