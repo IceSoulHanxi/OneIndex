@@ -49,6 +49,7 @@ async function setCache(request, fileSize, downloadUrl, fallback) {
     const remoteResp = await fetch(downloadUrl);
     const resp = new Response(remoteResp.body, {
       headers: {
+        "Content-Disposition" : remoteResp.headers.get("Content-Disposition"),
         "Content-Type": remoteResp.headers.get("Content-Type"),
         "ETag": remoteResp.headers.get("ETag"),
       },
@@ -68,6 +69,7 @@ async function setCache(request, fileSize, downloadUrl, fallback) {
     remoteResp.body.pipeTo(writable);
     const resp = new Response(readable, {
       headers: {
+        "Content-Disposition" : remoteResp.headers.get("Content-Disposition"),
         "Content-Type": remoteResp.headers.get("Content-Type"),
         "ETag": remoteResp.headers.get("ETag")
       },
