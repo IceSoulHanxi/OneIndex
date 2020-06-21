@@ -50,6 +50,7 @@ async function setCache(request, fileSize, downloadUrl, fallback) {
     const resp = new Response(remoteResp.body, {
       headers: {
         "Content-Disposition" : remoteResp.headers.get("Content-Disposition"),
+        "Content-Length": remoteResp.headers.get("Content-Length"),
         "Content-Type": remoteResp.headers.get("Content-Type"),
         "ETag": remoteResp.headers.get("ETag"),
       },
@@ -70,6 +71,7 @@ async function setCache(request, fileSize, downloadUrl, fallback) {
     const resp = new Response(readable, {
       headers: {
         "Content-Disposition" : remoteResp.headers.get("Content-Disposition"),
+        "Content-Length": remoteResp.headers.get("Content-Length"),
         "Content-Type": remoteResp.headers.get("Content-Type"),
         "ETag": remoteResp.headers.get("ETag")
       },
