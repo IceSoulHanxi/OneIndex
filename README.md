@@ -8,6 +8,10 @@ Onedrive Directory Index
 
 使用Cloudflare CDN功能加速下载速度
 
+[Nexmoe修改版](https://github.com/Zisbusy/OneIndex-theme)+[看图模式](https://github.com/hang666/oneindex-h)
+
+PDF在线预览(TODO)
+
 ## Demo
 [https://pan.ixnah.com](https://pan.ixnah.com)  
 
