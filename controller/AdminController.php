@@ -6,7 +6,7 @@ class AdminController
 	static $default_config = array(
 		'site_name' => 'OneIndex',
 		'password' => 'oneindex',
-		'style' => 'nexmoe', // material -> nexmoe
+		'style' => 'nexmoe2', // material -> nexmoe
 		'onedrive_root' => '',
 		'cache_type' => 'secache',
 		'cache_expire_time' => 3600,
@@ -25,7 +25,10 @@ class AdminController
 		'images' => ['home' => false, 'public' => false, 'exts' => ['jpg', 'png', 'gif', 'bmp']],
 		// Cloudflare CDN
 		'cdn_address' => '',
-		'cdn_regex' => '([\s\S]*)'
+		'cdn_regex' => '([\s\S]*)',
+		// Nexmoe魔改设置
+		'qq' => '2073211745',
+		'blog_url' => 'https://www.ixnah.com'
 	);
 
 	function __construct()
@@ -72,6 +75,10 @@ class AdminController
 
 			config('cdn_address', $_POST['cdn_address']); // Cloudflare CDN
 			config('cdn_regex', $_POST['cdn_regex']);
+
+			// Nexmoe魔改设置
+			config('qq', $_POST['qq']);
+			config('blog_url', $_POST['blog_url']);
 		}
 
 		$config = config('@base');

@@ -82,6 +82,15 @@
 		  </label>
 		</div>
 		
+		<div class="mdui-textfield">
+            <h4>QQ号<small>Nexmoe魔改设置</small></h4>
+            <input class="mdui-textfield-input" type="text" name="qq" value="<?php echo $config['qq'];?>"/>
+        </div>
+
+		<div class="mdui-textfield">
+            <h4>博客链接<small>Nexmoe魔改设置</small></h4>
+            <input class="mdui-textfield-input" type="text" name="blog_url" value="<?php echo $config['blog_url'];?>"/>
+        </div>
 
 		
 
