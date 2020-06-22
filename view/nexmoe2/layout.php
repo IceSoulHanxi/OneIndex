@@ -36,7 +36,7 @@
             <a href="/"><img class="avatar" src="//q.qlogo.cn/g?b=qq&nk=<?php e(config('qq'));?>&s=100"/></a>
             <div class="navRight">
                 <ul class="navul">
-                    <li class="navli"><label class="mdui-switch">看图模式<input type="checkbox" id="image_view" <?php if ($_COOKIE["image_mode"] == "1") {echo "checked";} ?>><i class="mdui-switch-icon"></i></label></li>
+                    <li class="navli"><label class="mdui-switch">看图模式: <input type="checkbox" id="image_view" <?php if ($_COOKIE["image_mode"] == "1") {echo "checked";} ?>><i class="mdui-switch-icon"></i></label></li>
                     <li class="navli"><a href="<?php e(config('blog_url'));?>" target="_blank">博客</a></li>
                     <li class="navli"><a href="/login">登陆</a></li>
                 </ul>

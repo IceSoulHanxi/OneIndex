@@ -97,18 +97,18 @@ function is_image($item){
 		</li>
 			<?php else:?>
 		<li class="mdui-list-item file mdui-ripple">
-			<a href="<?php echo get_absolute_path($root.$path).rawurlencode($item['name']);?>" target="_blank">
-			  <?php if(is_image($item) and $_COOKIE["image_mode"] == "1"):?>
-				<img class="mdui-img-fluid" src="<?php echo get_absolute_path($root.$path).rawurlencode($item['name']); ?>">
-			  <?php else:?>
+			<?php if(is_image($item) and $_COOKIE["image_mode"] == "1"):?>
+			  <img class="mdui-img-fluid mdui-center" src="<?php echo get_absolute_path($root.$path).rawurlencode($item['name']); ?>">
+			<?php else:?>
+			  <a href="<?php echo get_absolute_path($root.$path).rawurlencode($item['name']);?>" target="_blank">
 			    <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
-				  <i class="mdui-icon material-icons"><?php echo file_ico($item);?></i>
+			      <i class="mdui-icon material-icons"><?php echo file_ico($item);?></i>
 		    	  <span><?php e($item['name']);?></span>
 			    </div>
 			    <div class="mdui-col-sm-3 mdui-text-right"><?php echo date("Y-m-d H:i:s", $item['lastModifiedDateTime']);?></div>
-				<div class="mdui-col-sm-2 mdui-text-right"><?php echo onedrive::human_filesize($item['size']);?></div>
+			    <div class="mdui-col-sm-2 mdui-text-right"><?php echo onedrive::human_filesize($item['size']);?></div>
+			  </a>
 			  <?php endif;?>
-		  	</a>
 		</li>
 			<?php endif;?>
 		<?php endforeach;?>

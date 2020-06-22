@@ -260,7 +260,7 @@ body {
     color: #7e7e7e;
     display: inline-block;
     height: 34px;
-    /* line-height: 34px; */
+    line-height: 30px;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -272,7 +272,7 @@ body {
     display: inline-block;
     width: 36px;
     height: 14px;
-    /* vertical-align: middle; */
+    vertical-align: baseline;
     background-color: rgba(0, 0, 0, .38);
     border-radius: 14px;
     -webkit-transition: background-color .3s cubic-bezier(.4, 0, .2, 1);
