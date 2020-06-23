@@ -224,7 +224,10 @@ $(function(){
 	<script src="//cdnjs.loli.net/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 	<script>
 	$(function() {
-		$("img").lazyload({effect: "fadeIn"});
+		$("img").lazyload({
+		    placeholder: "//<?php e($_SERVER['HTTP_HOST'].'/'.substr(constant("VIEW_PATH"), strlen(ROOT)));?>theme/loading.gif",
+		    effect: "fadeIn"
+		});
   	});
 	</script>
 <?php endif;?>
