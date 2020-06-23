@@ -22,6 +22,9 @@ class cdn
             } else {
                 $host = parse_url($item['downloadUrl'], PHP_URL_HOST);
                 $item['downloadUrl'] = str_replace($host, $config['cdn_address'], $item['downloadUrl']) . '&odFileSize=' . $item['size'] . '&odHost='.$host;
+                if ($_GET['path']) {
+                    $item['downloadUrl'] = $item['downloadUrl'] . '&odPath=' . $_GET['path'];
+                }
             }
         }
         return $item;
