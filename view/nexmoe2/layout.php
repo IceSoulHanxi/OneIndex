@@ -71,11 +71,11 @@
                 exp.setTime(exp.getTime() - 1); 
                 var cval=getCookie(key); 
                 if (cval!=null)
-                    document.cookie= key + "=" + cval + ";expires=" + exp.toGMTString(); 
+                    document.cookie= key + "=" + cval + ";expires=" + exp.toGMTString() + ";path=/"; 
                 var date = new Date();
                 var nowDate = date.getDate();
                 date.setDate(nowDate + day);
-                var cookie = key + "=" + value + "; expires=" + date;
+                var cookie = key + "=" + value + "; expires=" + date + ";path=/";
                 document.cookie = cookie;
                 return cookie;
             }
