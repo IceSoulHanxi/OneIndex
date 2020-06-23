@@ -10,6 +10,8 @@ Onedrive Directory Index
 
 [Nexmoe修改版](https://github.com/Zisbusy/OneIndex-theme)+[看图模式](https://github.com/hang666/oneindex-h)
 
+看图模式图片懒加载
+
 PDF在线预览(TODO)
 
 ## Demo

@@ -97,18 +97,19 @@ function is_image($item){
 		</li>
 			<?php else:?>
 		<li class="mdui-list-item file mdui-ripple">
+			<a href="<?php echo get_absolute_path($root.$path).rawurlencode($item['name']);?>" target="_blank">
+			<!-- 看图模式 lazyload -->
 			<?php if(is_image($item) and $_COOKIE["image_mode"] == "1"):?>
-			  <img class="mdui-img-fluid mdui-center" src="<?php echo get_absolute_path($root.$path).rawurlencode($item['name']); ?>">
+			  <img class="mdui-img-fluid mdui-center" data-original="<?php echo get_absolute_path($root.$path).rawurlencode($item['name']); ?>">
 			<?php else:?>
-			  <a href="<?php echo get_absolute_path($root.$path).rawurlencode($item['name']);?>" target="_blank">
-			    <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
-			      <i class="mdui-icon material-icons"><?php echo file_ico($item);?></i>
-		    	  <span><?php e($item['name']);?></span>
-			    </div>
-			    <div class="mdui-col-sm-3 mdui-text-right"><?php echo date("Y-m-d H:i:s", $item['lastModifiedDateTime']);?></div>
-			    <div class="mdui-col-sm-2 mdui-text-right"><?php echo onedrive::human_filesize($item['size']);?></div>
-			  </a>
-			  <?php endif;?>
+			  <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
+			    <i class="mdui-icon material-icons"><?php echo file_ico($item);?></i>
+		    	<span><?php e($item['name']);?></span>
+			  </div>
+			  <div class="mdui-col-sm-3 mdui-text-right"><?php echo date("Y-m-d H:i:s", $item['lastModifiedDateTime']);?></div>
+			  <div class="mdui-col-sm-2 mdui-text-right"><?php echo onedrive::human_filesize($item['size']);?></div>
+			<?php endif;?>
+			</a>
 		</li>
 			<?php endif;?>
 		<?php endforeach;?>
@@ -217,4 +218,14 @@ $(function(){
 });
 </script>
 <a href="javascript:thumb();" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">format_list_bulleted</i></a>
+<!-- 看图模式 lazyload -->
+<?php if(is_image($item) and $_COOKIE["image_mode"] == "1"):?>
+	<script src="//cdnjs.loli.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+	<script src="//cdnjs.loli.net/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+	<script>
+	$(function() {
+		$("img").lazyload({effect: "fadeIn"});
+  	});
+	</script>
+<?php endif;?>
 <?php view::end('content');?>
