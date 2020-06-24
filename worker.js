@@ -66,6 +66,7 @@ async function setCache(request, fileSize, downloadUrl, fallback) {
         "Content-Disposition" : remoteResp.headers.get("Content-Disposition"),
         "Content-Length": remoteResp.headers.get("Content-Length"),
         "Content-Type": remoteResp.headers.get("Content-Type"),
+        "Cache-Control": "public, max-age=2678400",
         "ETag": remoteResp.headers.get("ETag")
       },
       status: remoteResp.status,
@@ -87,6 +88,7 @@ async function setCache(request, fileSize, downloadUrl, fallback) {
         "Content-Disposition" : remoteResp.headers.get("Content-Disposition"),
         "Content-Length": remoteResp.headers.get("Content-Length"),
         "Content-Type": remoteResp.headers.get("Content-Type"),
+        "Cache-Control": "public, max-age=2678400",
         "ETag": remoteResp.headers.get("ETag")
       },
       status: remoteResp.status,
